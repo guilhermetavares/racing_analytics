@@ -33,6 +33,10 @@ class Pilot(object):
         return self._sum(lst) / len(lst)
 
     @property
+    def fmt_finished(self):
+        return 'SIM' if self.finished else 'NAO'
+
+    @property
     def speed(self):
         lst = [item.get('speed') for item in self.laps]
         return self._average(lst)

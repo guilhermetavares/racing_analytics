@@ -2,6 +2,10 @@ import re
 from datetime import timedelta
 
 
+def format_bool(value):
+    return 'SIM' if value else 'NAO'
+
+
 def format_to_timedelta(value):
     minutes, seconds, microseconds = list(map(int, re.compile('([0-9]+)').findall(value)))
     return timedelta(minutes=minutes, seconds=seconds, microseconds=microseconds)
