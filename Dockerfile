@@ -1,6 +1,7 @@
 FROM python:3
 
-RUN mkdir -p ~/test
-ADD script.py /
+ADD ./* $HOME/src/
+WORKDIR /src/
 
-RUN pip install pystrich
+ADD ./requirements/ /requirements/
+RUN pip install -r /requirements/base.txt
