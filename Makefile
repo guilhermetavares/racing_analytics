@@ -3,11 +3,11 @@ help:
 
 build:
 	@echo "running build"
-	docker build -t racing_analytics . --no-cache
+	docker build -t racing_analytics . # --no-cache
 
 test:
 	@echo "running test"
-	docker run racing_analytics py.test src/tests.py -s --cov-report term --cov-report html
+	docker run racing_analytics py.test tests.py -s --cov-report term --cov-report html
 
 run:
 		@echo "running run"
