@@ -2,6 +2,31 @@ import re
 from datetime import timedelta
 
 
+def process_drivers(data, Pilot):
+    drivers = dict()
+
+    for line in data:
+        item = format_line(line)
+
+        if len(item) == 0:
+            continue
+
+        date, code, _, name, lap, time_, speed = item
+        driver = drivers.get(code, None)
+
+        if driver is None:
+            driver = Pilot(code=code, name=name)
+            drivers.update({code: driver})
+
+        driver.add_lap({
+            'speed': speed,
+            'number': lap,
+            'time': time_,
+        })
+
+    return drivers
+
+
 def format_bool(value):
     return 'SIM' if value else 'NAO'
 
