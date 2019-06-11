@@ -52,7 +52,11 @@ def test_models_pilot_add_lap(pilot):
     assert pilot.time == timedelta(seconds=210)
 
 
-def test_models_pilot_process_drivers(data):
+def test_models_pilot_print_drivers(data):
+    assert len(Pilot.print_drivers(process_drivers(data, Pilot))) == 10
+
+
+def test_utils_pilot_process_drivers(data):
     assert len(process_drivers(data, Pilot).keys()) == 6
 
 
