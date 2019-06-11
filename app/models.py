@@ -10,9 +10,6 @@ class Pilot(object):
         self.finished = False
         self.fastest_lap = None
 
-    def __repr__(self):
-        return f'{self.code}'
-
     def __str__(self):
         return self.code
 
@@ -41,8 +38,12 @@ class Pilot(object):
             line = [ctn, i, i.name, i.fmt_finished, i.time, i.speed, i.fastest_lap, '+{}'.format(diff_champion)]
             stdout.append(';'.join(map(str, line)))
 
+        fastest_lap = fastest_lap or ['N/D', 'N/D']
+
         stdout.append(f'TOTAL DE PROVA: {fastest_time}')
-        stdout.append('VOLTA MAIS RAPIDA: {} {}'.format(fastest_lap[0], fastest_lap[1]))
+        stdout.append('VOLTA MAIS RAPIDA: {} {}'.format(
+            fastest_lap[0],
+            fastest_lap[1]))
         return stdout
 
 
