@@ -12,7 +12,3 @@ test:
 run:
 		@echo "running docker for ", $(path)
 		cat $(path) | docker run -i --rm racing_analytics python main.py
-
-mkdir:
-	docker run racing_analytics
-	docker exec -i racing_analytics:latest sh -c 'mkdir -p /home/e1/e2'

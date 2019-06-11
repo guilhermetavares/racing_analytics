@@ -1,10 +1,5 @@
 from functools import reduce
 
-try:
-    from utils import format_line
-except:
-    from .utils import format_line
-
 
 class Pilot(object):
 

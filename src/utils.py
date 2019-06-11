@@ -2,6 +2,11 @@ import re
 from datetime import timedelta
 
 
+def process_stdin(data, Pilot):
+    drivers = process_drivers(data, Pilot)
+    print('\n'.join(Pilot.print_drivers(drivers)))
+
+
 def process_drivers(data, Pilot):
     drivers = dict()
 

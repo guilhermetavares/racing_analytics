@@ -3,7 +3,8 @@ import pytest
 from datetime import timedelta
 
 from .utils import format_bool, format_to_timedelta, \
-    format_to_int, format_to_float, format_line, process_drivers
+    format_to_int, format_to_float, format_line, process_drivers, \
+    process_stdin
 from .models import Pilot
 
 
@@ -54,6 +55,12 @@ def test_models_pilot_add_lap(pilot):
 
 def test_models_pilot_print_drivers(data):
     assert len(Pilot.print_drivers(process_drivers(data, Pilot))) == 10
+
+
+def test_utils_process_stdin(capsys, data):
+    process_stdin(data, Pilot)
+    captured = capsys.readouterr()
+    assert 'RESULTADO FINAL' in captured.out
 
 
 def test_utils_pilot_process_drivers(data):
