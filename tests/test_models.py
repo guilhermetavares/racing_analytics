@@ -1,16 +1,22 @@
-import pytest
-
 from datetime import timedelta
-
-from .models import Pilot
 
 
 def test_models_pilot_init(pilot):
-    assert pilot.finished is False
-    assert pilot.fastest_lap is None
-    assert len(pilot.laps) == 0
-    assert str(pilot) == pilot.code
-    assert pilot.fmt_finished == 'NAO'
+
+    if not pilot.finished is False:
+        raise AssertionError()
+
+    if not pilot.fastest_lap is None:
+        raise AssertionError()
+
+    if not len(pilot.laps) == 0:
+        raise AssertionError()
+
+    if not str(pilot) == pilot.code:
+        raise AssertionError()
+
+    if not pilot.fmt_finished == 'NAO':
+        raise AssertionError()
 
 
 def test_models_pilot_add_lap(pilot):
@@ -20,11 +26,21 @@ def test_models_pilot_add_lap(pilot):
         'time': timedelta(seconds=90),
     }
     pilot.add_lap(lap)
-    assert pilot.finished is False
-    assert pilot.fastest_lap == lap.get('time')
-    assert pilot.total_laps == 1
-    assert pilot.speed == lap.get('speed')
-    assert pilot.time == lap.get('time')
+
+    if not pilot.finished is False:
+        raise AssertionError()
+
+    if not pilot.fastest_lap == lap.get('time'):
+        raise AssertionError()
+
+    if not pilot.total_laps == 1:
+        raise AssertionError()
+
+    if not pilot.speed == lap.get('speed'):
+        raise AssertionError()
+
+    if not pilot.time == lap.get('time'):
+        raise AssertionError()
 
     lap = {
         'speed': 20,
@@ -32,8 +48,18 @@ def test_models_pilot_add_lap(pilot):
         'time': timedelta(seconds=120),
     }
     pilot.add_lap(lap)
-    assert pilot.finished is True
-    assert pilot.fastest_lap == timedelta(seconds=90)
-    assert pilot.total_laps == 2
-    assert pilot.speed == 15
-    assert pilot.time == timedelta(seconds=210)
+
+    if not pilot.finished is True:
+        raise AssertionError()
+
+    if not pilot.fastest_lap == timedelta(seconds=90):
+        raise AssertionError()
+
+    if not pilot.total_laps == 2:
+        raise AssertionError()
+
+    if not pilot.speed == 15:
+        raise AssertionError()
+
+    if not pilot.time == timedelta(seconds=210):
+        raise AssertionError()

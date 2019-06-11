@@ -1,8 +1,8 @@
 FROM python:3
 
-ADD ./requirements/ /requirements/
+COPY ./requirements/ /requirements/
 RUN pip install -r /requirements/base.txt
 
-ADD ./tests $HOME/tests/
-ADD ./* $HOME/app/
+COPY ./tests $HOME/tests/
+COPY ./* $HOME/app/
 WORKDIR /app/

@@ -1,6 +1,3 @@
-import pytest
-
-from datetime import timedelta
 from .utils import format_bool, format_to_timedelta, \
     format_to_int, format_to_float, format_line, process_drivers, \
     process_stdin
