@@ -2,7 +2,7 @@
 omit=*/tests/*
 
 [report]
-omit=*/tests/*
+omit=tests/*
 
 [html]
 directory = htmlcov
