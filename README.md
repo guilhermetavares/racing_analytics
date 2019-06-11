@@ -30,7 +30,7 @@ $ make run path=your/file/path/example.txt
 $ make test
 ```
 
-4. For see a file example, just run
+4. To see a file example, just run
 ```
 $ make example
 ```
