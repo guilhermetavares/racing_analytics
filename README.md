@@ -1,6 +1,7 @@
 # racing_analytics
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/cc7e2af47c7c4e41a8354a069179e65a)](https://app.codacy.com/app/zetavares.rib/racing_analytics?utm_source=github.com&utm_medium=referral&utm_content=guilhermetavares/racing_analytics&utm_campaign=Badge_Grade_Dashboard)
+[![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)
 
 This project is the solution for a programing test.
 To see all the requirements [link here](https://github.com/Gympass/interview-test/blob/master/README.md)
