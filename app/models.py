@@ -56,9 +56,11 @@ class Pilot(object):
 
         self.laps.append(data)
 
+    @classmethod
     def _sum(self, lst):
         return reduce(lambda a, b: a + b, lst)
 
+    @classmethod
     def _average(self, lst):
         return self._sum(lst) / len(lst)
 

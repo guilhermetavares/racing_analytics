@@ -9,7 +9,7 @@ build:
 
 test:
 	@echo "running test"
-	docker run racing_analytics py.test tests.py -s --cov-report term --cov-report html
+	docker run racing_analytics py.test -s --cov-report term --cov-report html
 
 run:
 		@echo "running docker for ", $(path)
