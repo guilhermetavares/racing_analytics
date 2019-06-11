@@ -2,7 +2,6 @@
 
 This project is the solution for a developming test, [link here](https://github.com/Gympass/interview-test/blob/master/README.md)
 
-
 ## Step-by-step
 
 1.  Build the docker, mount the enviroment

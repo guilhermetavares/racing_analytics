@@ -16,7 +16,7 @@ def process_drivers(data, Pilot):
         if len(item) == 0:
             continue
 
-        date, code, _, name, lap, time_, speed = item
+        _, code, _, name, lap, time_, speed = item
         driver = drivers.get(code, None)
 
         if driver is None:

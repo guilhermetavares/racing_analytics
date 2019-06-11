@@ -5,11 +5,11 @@ help:
 
 build:
 	@echo "running build"
-	docker build -t racing_analytics .
+	docker build -t racing_analytics . --no-cache
 
 test:
 	@echo "running test"
-	docker run racing_analytics py.test -s --cov-report term --cov-report html
+	docker run racing_analytics py.test --cov-config=.coveragerc -s --cov-report term --cov-report html
 
 run:
 		@echo "running docker for ", $(path)

@@ -50,7 +50,7 @@ def test_utils_format_to_float():
 
 def test_utils_format_line():
     line = '23:49:08.277      038 – F.MASSA                           1		1:02.852                        44,275'
-    date, code, _, name, lap, time_, speed = format_line(line)
+    _, code, _, name, lap, time_, speed = format_line(line)
 
     if not code == '038':
         raise AssertionError()
